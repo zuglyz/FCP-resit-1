@@ -21,46 +21,54 @@ def f(x,y):
 # xn = Calculation point
 # n = Number of steps
 
+# Inputs for Function
+    
+# Intial Conditions
+    
+print('Enter Initial Conditions:')
+    
+x0 = float(input('x0 = '))
+y0 = float(input('y0 = '))
+    
+# Calculation Point
+    
+print('Enter calculation point: ')
+xn = float(input('xn = '))
+    
+# Steps
+print('Enter number of steps: ')
+n = int(input('Number of steps = '))
+
 # Function for the Euler Method
 
 def euler(x0, y0, xn, n):  
-    #Calculating the step size
+    # Calculating the step size
     h = (xn-x0)/n
     
-    print('\n------SOLUTION-------')
-    print('-----------------------')
+    print('\n----------SOLUTION----------')
+    print('----------------------------')
     print('x0\y0\slope\yn')
-    print('-----------------------')
+    print('----------------------------')
     
     for i in range(n):
         slope = f(x0,y0)
         yn = y0 + h * slope
         print(x0, y0, slope, yn)
-        print('-----------------------')
+        print('----------------------------')
         y0 = yn
         x0 = x0+h
        
-    print(xn, yn)
+    print("xn = ", xn)
+    print("yn = ", yn)
     
-# Inputs for Function
-
-# Intial Conditions
-print('Enter Initial Conditions:')
-
-x0 = float(input('x0 = '))
-y0 = float(input('y0 = '))
-
-# Calculation Point
-print('Enter calculation point: ')
-xn = float(input('xn = '))
-
-# Steps
-print('Enter number of steps: ')
-step = int(input('Number of steps = '))
 
 # Calling the Euler Method
 
-# euler(x0, y0, xn, n)
+euler(x0, y0, xn, n)
+
+
+
+
 
 
 # RK4 Method Code
@@ -68,11 +76,30 @@ step = int(input('Number of steps = '))
 def f(a, b):
     return a+b
 
+
 # Defining variables
 
 # a0 and b0 = Initial conditions
 # an = Calculation point
 # c = Number of steps
+
+
+# Inputs for Function
+
+# Intial Conditions
+print('Enter Initial Conditions:')
+
+a0 = float(input('a0 = '))
+b0 = float(input('b0 = '))
+
+# Calculation Point
+print('Enter calculation point: ')
+an = float(input('an = '))
+
+# Steps
+print('Enter number of steps: ')
+m = int(input('Number of steps = '))
+
 
 # RK4 Method
 
@@ -101,28 +128,15 @@ def rk4 (a0, b0, an, c):
         b0 = bn
         a0 = a0 + h
        
-    print(an, bn)
+    print("an = ", an)
+    print("bn = ", bn)
     
-# Inputs for Function
-
-# Intial Conditions
-print('Enter Initial Conditions:')
-
-a0 = float(input('a0 = '))
-b0 = float(input('b0 = '))
-
-# Calculation Point
-print('Enter calculation point: ')
-an = float(input('an = '))
-
-# Steps
-print('Enter number of steps: ')
-steps = int(input('Number of steps = '))
-
 # Calling the RK4 method
 
-# rk4(a0, b0, an, steps)
-    
+rk4(a0, b0, an, steps)
+
+
+
 
 # solveto function
 
