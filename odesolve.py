@@ -10,6 +10,11 @@
 def f(x,y):
     return x+y
 
+# Euler's rule
+
+# x(n+1) = x(n) + f(x(n), t(n)) * h
+#   where h = stepsize
+
 # Defining variables
 
 # x0 and y0 = Initial conditions
@@ -29,7 +34,7 @@ def euler(x0, y0, xn, n):
     
     for i in range(n):
         slope = f(x0,y0)
-        yn = y0 + h*slope
+        yn = y0 + h * slope
         print(x0, y0, slope, yn)
         print('-----------------------')
         y0 = yn
@@ -118,8 +123,10 @@ steps = int(input('Number of steps = '))
 
 # rk4(a0, b0, an, steps)
     
-        
-        
+
+# solveto function
+
+def solveto(
 
 def solveto(f, x1, t1, t2, hmax, method=euler):
     """Use many steps of method to get from x1,t1 to x2,t2"""
