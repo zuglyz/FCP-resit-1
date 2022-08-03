@@ -33,17 +33,23 @@ Defined by the rule:
 
 Euler function should look like this:
 
-# e ul e r c h e c k . py
+e ul e r c h e c k . py
+
 from o d e s ol v e import e u l e r
-# D e fi n e s the RHS o f our ODE
+
+D e fi n e s the RHS o f our ODE
+
 d e f f ( x , t ) :
 r e t u r n x
-# I n i t i a l c o n d i t i o n s
+
+I n i t i a l c o n d i t i o n s
+
 t 0 = 1
 x0 = 1
 h = 0. 5
 t 1 = t 0 + h
 x1 = e u l e r ( f , x0 , t0 , h )
+
 p r i n t ( ’ S ol vi n g the ODE dx/ dt = x ’ )
 p r i n t ( ’ I n i t i a l c o n di ti o n x = ’ , x0 , ’ when t = ’ , t 0 )
 p r i n t ( ’ One s t e p o f the Eule r method with a s t e p s i z e o f h = ’ , h )
@@ -77,14 +83,14 @@ Using Numpy Arrays
 
 All functions should be able to ork with numpy arrays
 
-import numpy a s np
+import numpy as np
 from o d e s ol v e import s o l v e t o
 # D e fi n e s the RHS o f our ODE
 d e f f (X, t ) :
 x , y = X
 dxdt = y
 dydt = −x
-r e t u r n np . a r r a y ( [ dxdt , dydt ] )
+returnnp.array ( [ dxdt , dydt ] )
 # I n i t i a l c o n d i t i o n s
 t 0 = 0
 x0 = 1
@@ -97,23 +103,30 @@ odesolve
 
 The purpose of this function is to give many different values of the solution for x suitable for a plot
 
-import numpy a s np
-import m a t pl o tli b . p y pl o t a s p l t
+import numpy as np
+import matplotlib.pyplotasplt
+
 from o d e s ol v e import o d e s ol v e
-# D e fi n e s the RHS o f our ODE
+
+D e fi n e s the RHS o f our ODE
+
 d e f f (X, t ) :
 x , y = X
 dxdt = y
 dydt = −x
 r e t u r n np . a r r a y ( [ dxdt , dydt ] )
-# I n i t i a l c o n d i t i o n s
+
+I n i t i a l c o n d i t i o n s
+
 x0 = 1
 y0 = 0
 X0 = np . a r r a y ( [ x0 , y0 ] )
 h = 0. 0 1 # max s t e p s i z e
 t = np . l i n s p a c e ( 0 , 1 0 , 1 0 0 ) # time s t o pl o t the s o l u t i o n
 Xt = o d e s ol v e ( f , X0, t , h )
-# Use .T t o t r a n s p o s e the a r r a y
+
+Use .T t o t r a n s p o s e the a r r a y
+
 p l t . pl o t ( t , Xt .T)
 p l t . s a v e f i g ( ’ shm . pd f ’ )
 p l t . show ( )
