@@ -85,13 +85,17 @@ All functions should be able to ork with numpy arrays
 
 import numpy as np
 from o d e s ol v e import s o l v e t o
-# D e fi n e s the RHS o f our ODE
+
+D e fi n e s the RHS o f our ODE
+
 d e f f (X, t ) :
 x , y = X
 dxdt = y
 dydt = −x
 returnnp.array ( [ dxdt , dydt ] )
-# I n i t i a l c o n d i t i o n s
+
+I n i t i a l c o n d i t i o n s
+
 t 0 = 0
 x0 = 1
 y0 = 0
