@@ -92,50 +92,54 @@ print('Enter Initial Conditions:')
 a0 = float(input('a0 = '))
 b0 = float(input('b0 = '))
 
+# Step Size
+print('Enter step size: ')
+c = float(input('Step Size = '))
+
 # Calculation Point
 print('Enter calculation point: ')
-an = float(input('an = '))
-
-# Steps
-print('Enter number of steps: ')
-c = int(input('Number of steps = '))
+bc = float(input('bc = '))
 
 
 # RK4 Method
 
-def rk4 (a0, b0, an, c):
-    # Calculating the step size
-    d = (an-a0)/c
-    
+def rk4 (a0, b0, bc, c):
+    # Number of Steps
+    d = int((bc - b0)/c)
+
     print('\n------SOLUTION-------')
     print('-----------------------')
-    print('a0\b0\bn')
+    print('a0, b0, ac')
     print('-----------------------')
     
     # For loop to repeat the algorithm for all steps until desired result
     
-    for j in range(c):
-        k1 = f(a(c), b(c))
-        k2 = f(a(c) + k1 * d/2, b(c) + d/2)
-        k3 = f(a(c) + k2 * d/2, b(c) + d/2)
-        k4 = f(a(c) + k3 * d, b(c) + d)
+    for j in range(0, d+1):
+        k1 = f(a0, b0)
+        k2 = f(a0 + (k1 * (c/2)), b0 + (c/2))
+        k3 = f(a0 + (k2 * (c/2)), b0 + (c/2))
+        k4 = f(a0 + k3 * c, b0 + c)
         
-        k = a(n) + (k1 + 2 * k2 + 2 * k3 + k4) * d/6
-        bc = b0 + k
+        k = ((k1 + 2 * k2 + 2 * k3 + k4) * (c/6))
+        ac = a0 + k
         
-        print(a0, b0, bc)
+        
+        print(a0, b0, ac)
         print('-----------------------')
-        b0 = bc
-        a0 = a0 + d
+        
+        # Next Round in the Loop
+        
+        a0 = ac
+        b0 = b0 + c
        
-    print("ac = ", ac)
-    print("bc = ", bc)
-   
+    print("a = ", a0)
+    print("b = ", bc)
+
+
     
 # Calling the RK4 method
 
-rk4(a0, b0, an, c)
-
+rk4(a0, b0, bc, c)
 
 
 
