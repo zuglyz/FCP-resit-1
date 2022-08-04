@@ -115,12 +115,12 @@ def rk4 (a0, b0, an, c):
     # For loop to repeat the algorithm for all steps until desired result
     
     for j in range(c):
-        k1 = f(a0, b0)
-        k2 = f(a0 + k1 * d/2, b0 + d/2)
-        k3 = f(a0 + k2 * d/2, b0 + d/2)
-        k4 = f(a(c) + k3 * d, b0 + d)
+        k1 = f(a(c), b(c))
+        k2 = f(a(c) + k1 * d/2, b(c) + d/2)
+        k3 = f(a(c) + k2 * d/2, b(c) + d/2)
+        k4 = f(a(c) + k3 * d, b(c) + d)
         
-        k = (k1 + 2 * k2 + 2 * k3 + k4)/6
+        k = a(n) + (k1 + 2 * k2 + 2 * k3 + k4) * d/6
         bc = b0 + k
         
         print(a0, b0, bc)
@@ -130,6 +130,7 @@ def rk4 (a0, b0, an, c):
        
     print("ac = ", ac)
     print("bc = ", bc)
+   
     
 # Calling the RK4 method
 
