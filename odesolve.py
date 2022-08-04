@@ -98,7 +98,7 @@ an = float(input('an = '))
 
 # Steps
 print('Enter number of steps: ')
-m = int(input('Number of steps = '))
+c = int(input('Number of steps = '))
 
 
 # RK4 Method
@@ -118,22 +118,22 @@ def rk4 (a0, b0, an, c):
         k1 = f(a0, b0)
         k2 = f(a0 + k1 * d/2, b0 + d/2)
         k3 = f(a0 + k2 * d/2, b0 + d/2)
-        k4 = f(x(n) + k3 * h, b0 + d)
+        k4 = f(a(c) + k3 * d, b0 + d)
         
         k = (k1 + 2 * k2 + 2 * k3 + k4)/6
-        bn = b0 + k
+        bc = b0 + k
         
-        print(a0, b0, bn)
+        print(a0, b0, bc)
         print('-----------------------')
-        b0 = bn
-        a0 = a0 + h
+        b0 = bc
+        a0 = a0 + d
        
-    print("an = ", an)
-    print("bn = ", bn)
+    print("ac = ", ac)
+    print("bc = ", bc)
     
 # Calling the RK4 method
 
-rk4(a0, b0, an, steps)
+rk4(a0, b0, an, c)
 
 
 
