@@ -64,9 +64,13 @@ def euler(x0, y0, xn, n):
         
         y0 = yn
         x0 = x0 + n
-       
+    
+    yn = y0 - (n * slope)
+    
+    # printing the solution
+    
     print("xn = ", xn)
-    print("yn = ", y0 - (n * slope))
+    print("yn = ", yn)
     
 
 # Calling the Euler Method
