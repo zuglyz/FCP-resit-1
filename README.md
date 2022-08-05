@@ -32,3 +32,8 @@ numpy_and_graphs.py
 This file contains edited versions of the euler and rk4 functions to incorporate numpy arrays in order for a plot to be produced. The functions act similarly to when either function is called. The only difference is that a scatterplot is produced to aid in visualization of the ODE. The graph is plotted with the x-value on the x-axis and the y-value on the y-axis.
 I incorporated the numpy array into the for loops of each function so that the points would be automatically added to the numpy array every time they're calculated at each step. Once the for loop exits, the numpy array will consist of each set of x- and y-values which will then be plotted using matplotlib. 
 Matplotlib and Numpy must both be imported before these functions can run.
+
+
+png files
+
+Finally, my repository also includes 4 png files which are screenshots of the outputs and graphs of my euler and rk4 functions from numpy_and_graphs.py. They act as examples of my code succeeding in producing x-value and y-value solutions to ODEs as well as plotting x- and y-values from each step into a scatterplot.
