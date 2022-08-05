@@ -35,31 +35,38 @@ y0 = float(input('y0 = '))
 print('Enter calculation point: ')
 xn = float(input('xn = '))
     
-# Steps
-print('Enter number of steps: ')
-n = int(input('Number of steps = '))
+# Step Size
+print('Enter step size: ')
+n = float(input('Step Size = '))
+
 
 # Function for the Euler Method
 
 def euler(x0, y0, xn, n):  
-    # Calculating the step size
-    h = (xn-x0)/n
+    # Calculating the number of steps
+    h = int((xn-x0)/n)
     
     print('\n----------SOLUTION----------')
     print('----------------------------')
-    print('x0\y0\slope\yn')
+    print('x0, y0, slope, yn')
     print('----------------------------')
     
-    for i in range(n):
-        slope = f(x0,y0)
-        yn = y0 + h * slope
-        print(x0, y0, slope, yn)
+    for i in range(h+1):
+        slope = float(f(x0,y0))
+        yn = y0 + n * slope
+        
+        # Print Table
+        
+        print('%.4f\t%.4f\t%0.4f\t%.4f'% (x0, y0, slope, yn))
         print('----------------------------')
+        
+        # Next Round Variable Values
+        
         y0 = yn
-        x0 = x0+h
+        x0 = x0 + n
        
     print("xn = ", xn)
-    print("yn = ", yn)
+    print("yn = ", y0 - (n * slope))
     
 
 # Calling the Euler Method
