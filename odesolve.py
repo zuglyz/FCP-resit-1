@@ -132,7 +132,7 @@ def rk4 (a0, b0, bc, c):
         a0 = ac
         b0 = b0 + c
        
-    print("a = ", a0)
+    print("a = ", a0 - k)
     print("b = ", bc)
 
 
